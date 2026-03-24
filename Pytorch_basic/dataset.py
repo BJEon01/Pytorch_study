@@ -3,8 +3,8 @@ from torch.utils.data import Dataset
 from torchvision import datasets
 from torchvision.transforms import ToTensor
 import matplotlib.pyplot as plt
-
-
+# torchvision은 Pytorch에서 image관련 기능을 모아둔 라이브러리.(이미지 데이터셋, 전처리, 모델), dataset은 데이터셋 모음을 가져온다 유명한 데이터셋이 사전에 Dataset클래스로 정의 되어 있다.
+# transform은 이미지에 적용할 변환을 가져오는 것
 
 training_data = datasets.FashionMNIST(
     root="data", # 학습/테스트 데이터가 저장되는 경로
@@ -52,7 +52,7 @@ import os
 import pandas as pd
 from torchvision.io import read_image
 
-
+# 이미지가 저장된 경로 + input, target 데이터 csv경로 필요
 class CustomImageDataset(Dataset):
     def __init__(self, annotations_file,img_dir, transforms=None, target_transform=None):
         self.img_labels=pd.read_csv(annotations_file, names=['file_name','label'])
