@@ -17,3 +17,6 @@ print(b.grad)
 with torch.no_grad():
     z = torch.matmul(x,w)+ b
 print(z.requires_grad)
+
+z = torch.matmul(x,w) + b
+z_det = z.detach()
